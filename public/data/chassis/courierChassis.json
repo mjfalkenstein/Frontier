@@ -1,0 +1,10 @@
+{
+  "id": 1,
+  "manufacturer": "Osiris",
+  "model": "Courier",
+  "startingScreenText": "Welcome, %n\nThis is your ship :)",
+  "borderCharacters": "-|****",
+  "maxFuel": 100,
+  "cargo": [],
+  "maxCargo": 10
+}

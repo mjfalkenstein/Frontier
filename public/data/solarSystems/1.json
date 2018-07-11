@@ -1,0 +1,6 @@
+{
+  "name": "Sol",
+  "bodies": [
+    "mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"
+  ]
+}
