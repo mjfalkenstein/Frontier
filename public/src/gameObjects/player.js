@@ -10,6 +10,7 @@ class Player {
         this.name = _.get(other, 'name', 'Dade Murphy');
         this.discordUsername = _.get(other, 'discordUsername', 'Zero Cool');
         this.id = 'PLAYER:' + uuid();
+        this.gameID = -1;
         this.ship = ship;
         this.creationState = 0;
         this.location = {
@@ -26,6 +27,7 @@ class Player {
             'name': this.name,
             'discordUsername': this.discordUsername,
             'id': this.id,
+            'gameID': this.gameID,
             'ship': (typeof this.ship === "string") ? this.ship : this.ship.toJSON(),
             'creationState': this.creationState,
             'location': this.location

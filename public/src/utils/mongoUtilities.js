@@ -12,7 +12,7 @@ module.exports.initGame = function () {
 
 };
 
-module.exports.loadPlayer = function () {
+module.exports.saveGame = function () {
 
 };
 
@@ -20,7 +20,35 @@ module.exports.loadGame = function () {
 
 };
 
+module.exports.savePlayer = function () {
+
+};
+
+module.exports.loadPlayer = function () {
+
+};
+
+module.exports.saveShip = function () {
+
+};
+
 module.exports.loadShip = function () {
+
+};
+
+module.exports.saveSystem = function () {
+
+};
+
+module.exports.loadSystem = function () {
+
+};
+
+module.exports.saveSpaceBody = function () {
+
+};
+
+module.exports.loadSpaceBody = function () {
 
 };
 
@@ -52,6 +80,7 @@ let shipSchema = new Schema({
 });
 
 let systemSchema = new Schema({
+    id: Schema.Types.ObjectId,
     name: String,
     bodies: [Schema.Types.ObjectId]
 });
@@ -61,9 +90,15 @@ let spaceBodySchema = new Schema({
     distanceAU: Number
 });
 
+let gameSchema = new Schema({
+    id: Schema.Types.ObjectId,
+    systems: [Schema.Types.ObjectId]
+});
+
 module.exports = {
     'playerSchema': mongoose.model('player', playerSchema),
     'shipSchema': mongoose.model('ship', shipSchema),
     'systemSchema': mongoose.model('system', systemSchema),
     'spaceBodySchema': mongoose.model('spaceBody', spaceBodySchema),
+    'gameSchema': mongoose.model('game', gameSchema)
 };
