@@ -7,9 +7,11 @@ class SpaceBody{
         let spaceBodyDataRaw = fs.readFileSync('../data/spaceBodies/' + filepath + '.json');
         let spaceBodyData = JSON.parse(spaceBodyDataRaw);
         if (filepath.length === 0 || !spaceBodyData) {
+            this.id = filepath;
             this.name = "";
             this.distanceAU = 0;
         } else {
+            this.id = filepath;
             this.name = spaceBodyData.name;
             this.distanceAU = spaceBodyData.distanceAU;
         }

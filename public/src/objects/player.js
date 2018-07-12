@@ -26,7 +26,7 @@ class Player {
             'name': this.name,
             'discordUsername': this.discordUsername,
             'id': this.id,
-            'ship': this.ship,
+            'ship': (typeof this.ship === "string") ? this.ship : this.ship.toJSON(),
             'creationState': this.creationState,
             'location': this.location
         }

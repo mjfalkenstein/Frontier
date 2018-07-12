@@ -15,6 +15,9 @@ class InputHandler {
         rl.question('>', (input) => {
             rl.pause();
             console.log(player.name, 'entered:', input);
+
+
+
             rl.resume();
             return this.promptForInput(player);
         });

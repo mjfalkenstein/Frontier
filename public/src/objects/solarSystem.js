@@ -7,11 +7,11 @@ let fs = require('fs'),
     SpaceBody = require(path.resolve('objects/spaceBody.js'));
 
 class SolarSystem{
-    constructor(ID = 1) {
-        let solarSystemDataRaw = fs.readFileSync('../data/solarSystems/' + ID + '.json');
+    constructor(filename) {
+        let solarSystemDataRaw = fs.readFileSync('../data/solarSystems/' + filename + '.json');
         let solarSystemData = JSON.parse(solarSystemDataRaw);
         if (!solarSystemData) {
-            this.ID = ID;
+            this.id = filename;
             this.name = "";
             this.bodies = [];
         } else {
@@ -19,7 +19,7 @@ class SolarSystem{
             _.forEach(solarSystemData.bodies, (bodyName) => {
                 spaceBodies.push(new SpaceBody(bodyName));
             });
-            this.ID = ID;
+            this.id = filename;
             this.name = solarSystemData.name;
             this.bodies = spaceBodies;
         }
@@ -34,10 +34,10 @@ class SolarSystem{
         }
     }
 
-    listSolarMap(delimeter) {
+    listSolarMap(delimiter) {
         let retString = '';
         _.forEach(this.bodies, (body) => {
-            retString += delimeter +
+            retString += delimiter +
                          utils.formatStringToGivenLength(body.name, 10) + ' | ' +
                          utils.formatStringToGivenLength(body.distanceAU, 10) + 'AU\n';
         });
@@ -46,7 +46,7 @@ class SolarSystem{
 
     toJSON() {
         let solarSystemData = {
-            'ID': this.ID,
+            'id': this.id,
             'name': this.name,
             'bodies': []
         };

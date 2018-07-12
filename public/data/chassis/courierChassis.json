@@ -5,6 +5,7 @@
   "startingScreenText": "Welcome, %n\nThis is your ship :)",
   "borderCharacters": "-|****",
   "maxFuel": 100,
+  "maxNumHardpoints": 1,
   "cargo": [],
   "maxCargo": 10
 }

@@ -7,12 +7,12 @@ class Engines{
         let enginesDataRaw = fs.readFileSync('../data/engines/' + filepath);
         let enginesData = JSON.parse(enginesDataRaw);
         if (filepath.length === 0 || !enginesData) {
-            this.id = -1;
+            this.id = filepath;
             this.manufacturer = "";
             this.model = "";
             this.speed = 0;
         } else {
-            this.id = enginesData.id;
+            this.id = filepath;
             this.manufacturer = enginesData.manufacturer;
             this.model = enginesData.model;
             this.speed = enginesData.speed;

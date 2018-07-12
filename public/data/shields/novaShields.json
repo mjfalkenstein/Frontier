@@ -1,0 +1,7 @@
+{
+  "id": 1,
+  "manufacturer": "Osiris",
+  "model": "Nova",
+  "maxHealth": 100,
+  "rechargeDelay": 5
+}

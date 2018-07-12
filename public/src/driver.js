@@ -16,15 +16,16 @@ function main() {
     //     console.log('Error occurred during initialization:\n', err);
     // });
 
-    let ship = new Ship('courierChassis.json', 'gforceEngines.json', 'bulwarkHull.json');
-    let sol = new SolarSystem(1);
+    let ship = new Ship('courierChassis.json', 'gforceEngines.json', 'bulwarkHull.json', 'novaShields.json',
+        ['thermalLanceHardpoint.json'], 'milleniumHyperdrive.json');
+    let sol = new SolarSystem('sol');
     let player = new Player();
     player.ship = ship;
-    player.location.currentSystemID = sol.ID;
+    player.location.currentSystemID = sol.id;
     player.location.currentBodyID = sol.getBodyIDByName('earth');
 
-    console.log(player.toJSON());
-    console.log(sol.listSolarMap('*\t'));
+    console.log(JSON.stringify(player.toJSON(), null, 2));
+    console.log(sol.toJSON());
 
     return inputHandler.promptForInput(player);
 }

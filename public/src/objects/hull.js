@@ -7,17 +7,17 @@ class Hull{
         let hullDataRaw = fs.readFileSync('../data/hulls/' + filepath);
         let hullData = JSON.parse(hullDataRaw);
         if (filepath.length === 0 || !hullData) {
-            this.id = -1;
+            this.id = filepath;
             this.manufacturer = "";
             this.model = "";
             this.armor = 0;
-            this.health = 1;
+            this.maxHealth = 1;
         } else {
-            this.id = hullData.id;
+            this.id = filepath;
             this.manufacturer = hullData.manufacturer;
             this.model = hullData.model;
             this.armor = hullData.armor;
-            this.health = hullData.armor;
+            this.maxHealth = hullData.maxHealth;
         }
     }
 
@@ -27,7 +27,7 @@ class Hull{
             'manufacturer': this.manufacturer,
             'model': this.model,
             'armor': this.armor,
-            'health': this.health
+            'maxHealth': this.maxHealth
         };
     }
 }

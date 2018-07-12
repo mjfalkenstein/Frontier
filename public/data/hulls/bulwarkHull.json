@@ -3,5 +3,5 @@
   "manufacturer": "Osiris",
   "model": "Bulwark",
   "armor": 5,
-  "health": 100
+  "maxHealth": 100
 }
