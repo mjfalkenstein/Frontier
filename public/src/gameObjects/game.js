@@ -3,7 +3,7 @@
 let fs = require('fs'),
     path = require('path'),
     _ = require('lodash'),
-    SolarSystem = require(path.resolve('objects.solarSystem.js'));
+    SolarSystem = require(path.resolve('gameObjects/solarSystem.js'));
 
 class Game {
     constructor (gameID, dirPath) {

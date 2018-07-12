@@ -2,12 +2,12 @@
 
 let path = require('path'),
     _ = require('lodash'),
-    Chassis = require(path.resolve('objects/chassis.js')),
-    Hull = require(path.resolve('objects/hull.js')),
-    Engines = require(path.resolve('objects/engines.js')),
-    Shields = require(path.resolve('objects/shields.js')),
-    Hardpoint = require(path.resolve('objects/hardpoint.js')),
-    Hyperdrive = require(path.resolve('objects/hyperdrive.js'));
+    Chassis = require(path.resolve('shipObjects/chassis.js')),
+    Hull = require(path.resolve('shipObjects/hull.js')),
+    Engines = require(path.resolve('shipObjects/engines.js')),
+    Shields = require(path.resolve('shipObjects/shields.js')),
+    Hardpoint = require(path.resolve('shipObjects/hardpoint.js')),
+    Hyperdrive = require(path.resolve('shipObjects/hyperdrive.js'));
 
 class Ship{
     constructor(chassisFilepath, enginesFilepath, hullFilepath, shieldsFilepath,

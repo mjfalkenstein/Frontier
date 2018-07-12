@@ -2,12 +2,15 @@
 
 let fs = require('fs'),
     path = require('path'),
-    _ = require('lodash'),
+    Game = require(path.resolve('gameObjects/game.js')),
     q = require('q');
 
-module.exports.createGame = function (dirPath) {
-    dirPath = '../' + dirPath + '/';
-    let files = fs.readdirSync(dirPath);
+module.exports.createGame = function (dirPath, gameID = 0) {
+    let promise = q.when();
 
-    return q.when();
+    promise = promise.then(() => {
+        return new Game(gameID, dirPath);
+    });
+
+    return promise;
 };

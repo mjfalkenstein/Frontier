@@ -4,10 +4,11 @@ let fs = require('fs'),
     path = require('path'),
     _ = require('lodash'),
     utils = require(path.resolve('utils/utils.js')),
-    SpaceBody = require(path.resolve('objects/spaceBody.js'));
+    SpaceBody = require(path.resolve('gameObjects/spaceBody.js'));
 
 class SolarSystem{
     constructor(filename) {
+        filename = filename.replace('.json', '');
         let solarSystemDataRaw = fs.readFileSync('../data/solarSystems/' + filename + '.json');
         let solarSystemData = JSON.parse(solarSystemDataRaw);
         if (!solarSystemData) {
